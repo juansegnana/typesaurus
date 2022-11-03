@@ -3,29 +3,29 @@
 
 BIN = $(shell yarn bin)
 
-test:
-	${BIN}/firebase emulators:exec --only firestore "${BIN}/jest --env node"
-.PHONY: test
+# test:
+# 	${BIN}/firebase emulators:exec --only firestore "${BIN}/jest --env node"
+# .PHONY: test
 
-test-watch:
-	${BIN}/firebase emulators:exec --only firestore "${BIN}/jest --env node --watch"
+# test-watch:
+# 	${BIN}/firebase emulators:exec --only firestore "${BIN}/jest --env node --watch"
 
-test-setup:
-	${BIN}/firebase setup:emulators:firestore
+# test-setup:
+# 	${BIN}/firebase setup:emulators:firestore
 
-test-system: test-system-node test-system-browser
+# test-system: test-system-node test-system-browser
 
-test-system-node:
-	${BIN}/jest --env node
+# test-system-node:
+# 	${BIN}/jest --env node
 
-test-system-node-watch:
-	${BIN}/jest --env node --watch
+# test-system-node-watch:
+# 	${BIN}/jest --env node --watch
 
-test-system-browser:
-	${BIN}/karma start --single-run
+# test-system-browser:
+# 	${BIN}/karma start --single-run
 
-test-system-browser-watch:
-	${BIN}/karma start
+# test-system-browser-watch:
+# 	${BIN}/karma start
 
 build:
 	@rm -rf lib
@@ -43,6 +43,6 @@ publish: build
 publish-next: build
 	cd lib && npm publish --access public --tag next
 
-docs:
-	@${BIN}/typedoc --theme minimal --name Typesaurus
-.PHONY: docs
+# docs:
+# 	@${BIN}/typedoc --theme minimal --name Typesaurus
+# .PHONY: docs

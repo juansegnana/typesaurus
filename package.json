@@ -1,5 +1,5 @@
 {
-  "name": "typesaurus",
+  "name": "@jseg0/typesaurus",
   "version": "7.2.0",
   "description": "Type-safe ODM for Firestore",
   "keywords": [

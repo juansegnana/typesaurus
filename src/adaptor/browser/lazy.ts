@@ -12,7 +12,7 @@ export default async function adaptor() {
     Timestamp, 
     FieldPath, 
     FieldValue, 
-    DocumentSnapshot 
+    DocumentSnapshot, 
   } = await import('firebase/firestore')
 
   const firestore = getFirestore()
@@ -29,6 +29,7 @@ export default async function adaptor() {
       FieldPath: FieldPath,
       FieldValue: FieldValue
     },
+    // @ts-ignore
     getDocMeta: (snapshot: DocumentSnapshot) => ({
       fromCache: snapshot.metadata.fromCache,
       hasPendingWrites: snapshot.metadata.hasPendingWrites
